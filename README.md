@@ -37,11 +37,11 @@ SqlConsole2 is a lightweight application by design, its purpose being to allow y
 
 ## Download
 
-A GitHub release is not yet available.
+The latest and all other versions of SqlConsole2 can be downloaded from [here](https://github.com/mayakron/sqlconsole2/releases).
 
 ## Installation
 
-A GitHub release is not yet available.
+For the time being SqlConsole2 is available in portable format only, therefore to install it you just need to expand its archive to a directory of your choice and run the SqlConsole2.exe file. To uninstall SqlConsole2 it is enough to delete that directory.
 
 ## License
 
