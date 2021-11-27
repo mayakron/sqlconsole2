@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SqlConsole2" x:Class="SqlConsole2.MainWindow" mc:Ignorable="d" Title="SqlConsole2" Width="1200" Height="600" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded" KeyDown="Window_KeyDown" Closing="Window_Closing" Closed="Window_Closed">
+    <Window.Resources>
+        <ContextMenu x:Key="DataGridContextMenu">
+            <MenuItem Header="_View Selected Cell As...">
+                <MenuItem.Icon>
+                    <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                </MenuItem.Icon>
+                <MenuItem Header="Bmp" Click="ViewSelectedCellAsBmpDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Doc" Click="ViewSelectedCellAsDocDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Docx" Click="ViewSelectedCellAsDocxDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Gif" Click="ViewSelectedCellAsGifDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Htm" Click="ViewSelectedCellAsHtmDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Jpg" Click="ViewSelectedCellAsJpgDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Pdf" Click="ViewSelectedCellAsPdfDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Png" Click="ViewSelectedCellAsPngDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Ppt" Click="ViewSelectedCellAsPptDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Pptx" Click="ViewSelectedCellAsPptxDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Txt" Click="ViewSelectedCellAsTxtDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Xls" Click="ViewSelectedCellAsXlsDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Xlsx" Click="ViewSelectedCellAsXlsxDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Xml" Click="ViewSelectedCellAsXmlDataGridContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/ViewSelectedCellAsMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+    <DockPanel>
+        <Menu Padding="4" DockPanel.Dock="Top">
+            <MenuItem x:Name="FileMenuItem" Header="_File">
+                <MenuItem x:Name="FileNewMenuItem" Header="_New" InputGestureText="Ctrl+N" Click="FileNewMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/FileNewMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="FileOpenMenuItem" Header="_Open" InputGestureText="Ctrl+O" Click="FileOpenMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/FileOpenMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem x:Name="FileSaveMenuItem" Header="_Save" InputGestureText="Ctrl+S" Click="FileSaveMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/FileSaveMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="FileSaveAsMenuItem" Header="Save _As..." Click="FileSaveAsMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/FileSaveMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem x:Name="FileExitMenuItem" Header="E_xit" InputGestureText="Alt+F4" Click="FileExitMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/FileExitMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="EditMenuItem" Header="_Edit">
+                <MenuItem x:Name="EditUndoMenuItem" Header="_Undo" InputGestureText="Ctrl+Z" Click="EditUndoMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/EditUndoMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem x:Name="EditWordWrapMenuItem" Header="Word _Wrap" IsCheckable="True" InputGestureText="Ctrl+Shift+W" Checked="EditWordWrapMenuItem_Checked" Unchecked="EditWordWrapMenuItem_Unchecked" />
+                <Separator />
+                <MenuItem x:Name="EditSetAsContextMenuItem" Header="Set As _Context" InputGestureText="Ctrl+B" Click="EditSetAsContextMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/EditSetAsContextMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="SetsMenuItem" Header="_Sets">
+                <MenuItem x:Name="SetsExecuteQueryFromTextBoxMenuItem" Header="Execute Query From _Text Box" InputGestureText="Ctrl+F5" Click="SetsExecuteQueryFromTextBoxMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/SetsExecuteQueryFromTextBoxMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="SetsExecuteQueryFromClipboardMenuItem" Header="Execute Query From C_lipboard" Click="SetsExecuteQueryFromClipboardMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/SetsExecuteQueryFromClipboardMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Import Set From...">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/SetsImportSetFromMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="SetsImportSetFromXmlFileMenuItem" Header="_Xml File" Click="SetsImportSetFromXmlFileMenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="pack://siteoforigin:,,,/icons/SetsImportSetFromMenuItem.png" Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Export Set To...">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/SetsExportSetToMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                    <MenuItem x:Name="SetsExportSetToCsvFileMenuItem" Header="_Csv File" Click="SetsExportSetToCsvFileMenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="pack://siteoforigin:,,,/icons/SetsExportSetToMenuItem.png" Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="SetsExportSetToExcelFileMenuItem" Header="_Excel File" Click="SetsExportSetToExcelFileMenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="pack://siteoforigin:,,,/icons/SetsExportSetToMenuItem.png" Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="SetsExportSetToTsvFileMenuItem" Header="_Tsv File" Click="SetsExportSetToTsvFileMenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="pack://siteoforigin:,,,/icons/SetsExportSetToMenuItem.png" Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="SetsExportSetToXmlFileMenuItem" Header="_Xml File" Click="SetsExportSetToXmlFileMenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="pack://siteoforigin:,,,/icons/SetsExportSetToMenuItem.png" Width="16" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <Separator />
+                <MenuItem x:Name="SetsCloseMenuItem" Header="_Close" InputGestureText="Ctrl+F4" Click="SetsCloseMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/SetsCloseMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="SetsCloseAllMenuItem" Header="Close _All" InputGestureText="Ctrl+Shift+F4" Click="SetsCloseAllMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/SetsCloseAllMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="SetsCloseAllButActiveMenuItem" Header="Close All _But Active" InputGestureText="Ctrl+Alt+Shift+F4" Click="SetsCloseAllButActiveMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/SetsCloseAllButActiveMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="HelpMenuItem" Header="_Help">
+                <MenuItem x:Name="HelpProjectPageMenuItem" Header="Project _Page" Click="HelpProjectPageMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/HelpProjectPageMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="HelpAboutMenuItem" Header="_About" Click="HelpAboutMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/icons/HelpAboutMenuItem.png" Width="16" Height="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <StatusBar x:Name="StatusBar" DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Name="StatusBarTextBlock" />
+            </StatusBarItem>
+        </StatusBar>
+        <TabControl x:Name="TabControl">
+            <TabItem x:Name="QueryTabItem" Header="_Query">
+                <DockPanel>
+                    <TextBox x:Name="ContextTextBox" DockPanel.Dock="Top" Margin="2" Padding="2" BorderThickness="1" />
+                    <TextBox x:Name="QueryTextBox" Margin="2,4,2,2" Padding="2" FontFamily="Consolas" FontSize="11" AcceptsReturn="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" BorderThickness="1" AcceptsTab="True" />
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
